@@ -271,13 +271,45 @@ section p {
 
 /* -------- RESPONSIVO -------- */
 @media screen and (max-width: 768px) {
+    /* Home */
     .home {
         flex-direction: column-reverse; /* imagem em cima */
         text-align: center;
         gap: 30px;
         padding-top: 160px;
     }
+
+    /* Ícones de tecnologia na Home */
+    .home-tech-icons {
+        justify-content: center; /* centraliza */
+        flex-wrap: wrap; /* quebra linha se necessário */
+        gap: 10px;
+    }
+
+    .tech-icon {
+        width: 40px; /* menor tamanho para celular */
+    }
+
+    /* Cards de Formação, Projetos e Certificações */
+    .edu-container {
+        flex-direction: column; /* empilha os cards */
+        align-items: center;
+    }
+
+    .educ-item {
+        width: 90%; /* ocupa quase toda a tela */
+        min-width: auto;
+    }
+
+    /* Imagens dentro dos cards e Home */
+    .home-img,
+    .educ-logo,
+    .company-logo {
+        max-width: 100%;
+        height: auto;
+    }
 }
+
 
 .tech-icon {
     width: 40px;
