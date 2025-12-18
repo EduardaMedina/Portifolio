@@ -34,11 +34,6 @@ body {
     font-weight: 700;
 }
 
-/* -------- MENU -------- */
-.menu {
-    display: flex;
-}
-
 .menu a {
     margin: 0 15px;
     text-decoration: none;
@@ -50,15 +45,6 @@ body {
     color: #01d1b8;
 }
 
-/* -------- HAMBURGUER -------- */
-.menu-hamburger {
-    display: none;
-    font-size: 30px;
-    color: #01d1b8;
-    cursor: pointer;
-}
-
-/* -------- IDIOMAS -------- */
 .idiomas span {
     font-size: 22px;
     margin-left: 10px;
@@ -71,9 +57,15 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 60px;
-    padding: 120px 100px;
-    background: #01d1b8;
+
+    padding: 100px 100px;
+
+    background:  #01d1b8;
+
+    max-width: none;
+    margin: 0;
 }
+
 
 .home-text h2 {
     font-size: 22px;
@@ -92,14 +84,7 @@ body {
     color: #333;
 }
 
-/* -------- ÍCONES HOME -------- */
-.tech-icon {
-    width: 40px;
-    height: auto;
-    margin-top: 10px;
-}
-
-/* -------- IMAGEM HOME -------- */
+/* Imagem da HOME */
 .home-img {
     width: 250px;
     height: 250px;
@@ -108,12 +93,12 @@ body {
     object-fit: cover;
 }
 
-/* -------- SEÇÕES -------- */
+/* -------- SEÇÕES GERAIS -------- */
 section {
     padding: 60px 20px;
     max-width: 1200px;
     margin: auto;
-    scroll-margin-top: 100px;
+    scroll-margin-top: 100px; /* compensa header fixo */
 }
 
 section h2 {
@@ -133,10 +118,12 @@ section p {
 /* -------- EXPERIÊNCIA -------- */
 .exp-container {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     gap: 25px;
     max-width: 1000px;
     margin: auto;
+    justify-content: center;
 }
 
 .exp-item {
@@ -144,7 +131,9 @@ section p {
     padding: 25px 30px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 45%;
+    min-width: 280px;
 }
 
 .exp-item:hover {
@@ -155,17 +144,33 @@ section p {
 .exp-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 15px;
 }
 
 .exp-header h3 {
-    color: #31a59a;
     font-size: 18px;
+    font-weight: 700;
+    color: #31a59a;
+    max-width: 70%;
 }
 
 .exp-date {
     font-size: 14px;
     color: #777;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.exp-item ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.exp-item ul li {
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #333;
 }
 
 /* -------- FORMAÇÃO -------- */
@@ -173,6 +178,8 @@ section p {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    max-width: 1000px;
+    margin: auto;
     justify-content: center;
 }
 
@@ -180,39 +187,133 @@ section p {
     background: #acd4d0;
     padding: 20px;
     border-radius: 15px;
-    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
     flex: 1 1 250px;
-    transition: 0.3s;
-    border: 2px solid transparent;
+    min-width: 220px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    border: 2px solid transparent; /* borda padrão invisível */
 }
 
 .educ-item:hover {
     transform: translateY(-5px);
-    border: 2px solid #01d1b8;
-    box-shadow: 0 0 15px #01d1b8;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    border: 2px solid #01d1b8; /* borda fluorescente */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15), 0 0 15px #01d1b8; /* efeito glow */
 }
 
 .educ-logo {
     width: 60px;
+    height: auto;
     margin-bottom: 10px;
 }
 
-.educ-item h3 a {
+.educ-item h3 {
+    font-size: 16px;
+    font-weight: 700;
     color: #000;
-    text-decoration: none;
 }
 
-.educ-item h3 a:hover {
-    color: #01d1b8;
-    text-decoration: underline;
+.educ-item p {
+    font-size: 14px;
+    color: #333;
 }
 
-/* -------- SKILLS -------- */
+.educ-item .date {
+    font-size: 13px;
+    color: #777;
+    font-weight: 500;
+}
+
+
+
+/* -------- EMPRESA -------- */
+.company-intro {
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+.company-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.company-logo {
+    max-width: 200px;
+    height: auto;
+}
+
+.company-text {
+    font-size: 16px;
+    color: #ffffff;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.company-line {
+    margin-top: 20px;
+    border: none;
+    height: 2px;
+    background-color: #01d1b8;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background: #000;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .menu a {
+        margin: 0;
+    }
+
+    .menu-hamburger {
+        display: block;
+        font-size: 30px;
+        color: #01d1b8;
+        cursor: pointer;
+    }
+
+    /* 🔴 ISSO É O QUE FALTAVA */
+    .menu.active {
+        display: flex;
+    }
+}
+
+
+.tech-icon {
+    width: 40px;
+    height: auto;
+    margin-top: 10px;
+}
+
 #skills ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     list-style: none;
+    padding: 0;
     max-width: 800px;
     margin: auto;
 }
@@ -223,40 +324,22 @@ section p {
     border-radius: 12px;
     text-align: center;
     font-weight: 600;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
-/* -------- CERTIFICAÇÕES -------- */
-.cert-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.cert-item {
-    background: #acd4d0;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.cert-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px #01d1b8;
-}
-
-/* -------- CONTATO -------- */
 .contact-icons {
     display: flex;
     justify-content: center;
     gap: 30px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .contact-logo {
     width: 50px;
-    transition: 0.3s;
+    height: 50px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
 }
 
 .contact-logo:hover {
@@ -264,40 +347,72 @@ section p {
     filter: drop-shadow(0 0 10px #01d1b8);
 }
 
-/* -------- MENU MOBILE -------- */
-@media screen and (max-width: 768px) {
+.cert-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+    justify-content: center;
+}
 
-    .home {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding-top: 160px;
-    }
+.cert-item {
+    background: #acd4d0;
+    padding: 20px;
+    border-radius: 15px;
+    flex: 1 1 250px;
+    min-width: 220px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    text-align: center;
+}
 
-    .menu {
-        display: none;
-        position: absolute;
-        top: 80px;
-        right: 20px;
-        background: #000;
-        flex-direction: column;
-        padding: 20px;
-        border-radius: 10px;
-        gap: 15px;
-    }
+.cert-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15), 0 0 15px #01d1b8;
+    border: 2px solid #01d1b8;
+}
 
-    .menu.active {
-        display: flex;
-    }
+.cert-item h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
 
-    .menu-hamburger {
-        display: block;
-    }
+.cert-item p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
 
-    #skills ul {
-        grid-template-columns: 1fr;
-    }
+.cert-item .date {
+    font-size: 13px;
+    color: #777;
+    font-weight: 500;
+}
 
-    .educ-item {
-        width: 90%;
-    }
+.educ-item h3 a {
+    color: #000; /* cor do texto */
+    text-decoration: none; /* remove sublinhado padrão */
+    transition: all 0.3s ease;
+}
+
+.educ-item h3 a:hover {
+    text-decoration: underline; /* sublinha no hover */
+    color: #01d1b8; /* cor fluorescente opcional */
+}
+
+.educ-logo {
+    width: 60px;       /* tamanho da imagem */
+    height: auto;
+    display: block;
+    margin: 0 auto 12px; /* centraliza e dá espaço abaixo */
+    border-radius: 8px;   /* opcional, deixa cantos arredondados */
+}
+
+.menu.active {
+    display: flex;
+}
+
+.menu-hamburger {
+    display: none;
 }
