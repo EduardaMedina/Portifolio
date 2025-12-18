@@ -409,9 +409,10 @@ section p {
     border-radius: 8px;   /* opcional, deixa cantos arredondados */
 }
 
-.menu.active {
+.menu {
     display: flex;
 }
+
 
 .menu-hamburger {
     display: none;
